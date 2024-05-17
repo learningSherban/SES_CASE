@@ -1,0 +1,44 @@
+# version: "3.7"
+# services:
+#  api:
+#   build:
+#    context: .
+#    target: build
+#   volumes:
+#    - ./:/app
+#    - /app/node_modules
+#   ports:
+#    - 3000:3000
+#   command: npm run dev
+
+version: "3.7"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: build
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: npm run dev
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: sescase
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:

@@ -1,0 +1,41 @@
+{
+  "name": "ses_case",
+  "version": "1.0.0",
+  "description": "It is a Software Engineering School Practice Case",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --poll ./src/index.ts",
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learningSherban/SES_CASE.git"
+  },
+  "author": "maximsherban",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/learningSherban/SES_CASE/issues"
+  },
+  "homepage": "https://github.com/learningSherban/SES_CASE#readme",
+  "dependencies": {
+    "@types/node-cron": "^3.0.11",
+    "@types/nodemailer": "^6.4.15",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "inversify": "^6.0.2",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.13",
+    "pg": "^8.11.5",
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.3",
+    "tslog": "^4.9.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "rimraf": "^5.0.7",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
+}
