@@ -20,7 +20,7 @@ export class NotifyRateCrone implements IBaseCrone {
     ) {}
 
     create() {
-        this.croneInstance = schedule("*/1 * * * *", this.process.bind(this));
+        this.croneInstance = schedule("0 0 * * *", this.process.bind(this));
     }
 
     async process() {
