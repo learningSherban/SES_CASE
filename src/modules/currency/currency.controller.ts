@@ -21,7 +21,7 @@ export class CurrencyController extends BaseController implements ICurrencyContr
             const rate = await this.CurrencyService.getRate();
             this.send(res, 200, rate);
         } catch (error) {
-            next(error);
+            this.send(res, 409, "Rate recieve error");
         }
     }
 }
