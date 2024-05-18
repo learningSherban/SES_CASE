@@ -16,10 +16,7 @@ export abstract class BaseController {
 	}
 
 	public send<T>(res: Response, statusCode: number, data: T): Response<any, Record<string, any>> {
-		const responseObject = {
-			data,
-		};
-		return res.status(statusCode).json(responseObject);
+		return res.status(statusCode).json(data);
 	}
 
 	protected bindRoutes(routes: IControllerRoute[]) {
